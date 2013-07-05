@@ -255,7 +255,7 @@ def create_NTLM_AUTHENTICATE_MESSAGE(nonce, user, domain, password, NegotiateFla
     Payload_start = BODY_LENGTH # in bytes
 
     Workstation = gethostname().upper()
-    DomainName = domain.upper()
+    DomainName = domain.upper() if domain else ''
     UserName = user
     EncryptedRandomSessionKey = ""
     if is_unicode:
